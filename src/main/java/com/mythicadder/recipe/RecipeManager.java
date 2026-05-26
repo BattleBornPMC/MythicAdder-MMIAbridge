@@ -1,5 +1,6 @@
 package com.mythicadder.recipe;
 
+import com.mythicadder.MythicAdder;
 import com.mythicadder.hooks.ItemsAdderHook;
 import com.mythicadder.hooks.MythicHook;
 import org.bukkit.inventory.ItemStack;
@@ -10,11 +11,13 @@ import java.util.List;
 
 public class RecipeManager {
 
+    private final MythicAdder plugin;
     private final MythicHook mythic;
     private final ItemsAdderHook ia;
     private final List<CrossRecipe> recipes = new ArrayList<>();
 
-    public RecipeManager(MythicHook mythic, ItemsAdderHook ia) {
+    public RecipeManager(MythicAdder plugin, MythicHook mythic, ItemsAdderHook ia) {
+        this.plugin = plugin;
         this.mythic = mythic;
         this.ia = ia;
     }

@@ -22,6 +22,14 @@ public class MythicHook {
         }
     }
 
+    public boolean itemExists(String name) {
+        try {
+            return MythicBukkit.inst().getItemManager().getItemStack(name) != null;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public ItemStack getItemStack(String name, int amount) {
         try {
             ItemStack stack = MythicBukkit.inst().getItemManager().getItemStack(name);

@@ -47,7 +47,7 @@ public class MythicAdder extends JavaPlugin {
             getLogger().warning("ItemsAdder not found — IA recipes disabled.");
         }
 
-        recipeManager = new RecipeManager(mythicHook, iaHook);
+        recipeManager = new RecipeManager(this, mythicHook, iaHook);
         iaScanner = new ItemsAdderScanner(this);
         mmScanner = new MythicMobsScanner(this);
 
