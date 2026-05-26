@@ -1,0 +1,35 @@
+# Example shaped recipe: uses an ItemsAdder item + vanilla items to craft a MythicMobs item.
+#
+# Ingredient types:
+#   mythicmobs  -> 'id' is the MythicMobs internal item name (case-insensitive)
+#   itemsadder  -> 'id' is the ItemsAdder namespaced id, e.g. "itemsadder:ruby"
+#   vanilla     -> 'id' is the Bukkit Material name, e.g. "DIAMOND"
+#
+# Result types follow the same pattern.
+#
+# Shape: up to 3 rows of up to 3 characters. Space = empty slot.
+# A character in the shape must have a matching entry under 'ingredients'.
+
+name: example_shaped
+type: shaped
+
+result:
+  type: mythicmobs
+  id: ExampleMythicSword   # Replace with your actual MythicMobs item name
+  amount: 1
+
+shape:
+  - "ABA"
+  - " C "
+  - " C "
+
+ingredients:
+  A:
+    type: itemsadder
+    id: itemsadder:ruby      # Replace with your actual ItemsAdder item id
+  B:
+    type: vanilla
+    id: DIAMOND
+  C:
+    type: vanilla
+    id: STICK

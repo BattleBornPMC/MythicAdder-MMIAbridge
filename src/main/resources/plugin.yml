@@ -1,0 +1,21 @@
+name: MMIAbridge
+version: '${project.version}'
+main: com.mythicadder.MythicAdder
+api-version: '1.21'
+description: Cross-compatibility bridge between MythicMobs and ItemsAdder recipes.
+authors: [ BattleBornPMC ]
+
+softdepend:
+  - MythicMobs
+  - ItemsAdder
+
+commands:
+  mythicadder:
+    description: MythicAdder Bridge commands
+    usage: /mythicadder <reload|list>
+    permission: mythicadder.admin
+
+permissions:
+  mythicadder.admin:
+    description: Access to all MythicAdder admin commands
+    default: op

@@ -1,0 +1,16 @@
+# Example shapeless recipe: combines a MythicMobs item and a vanilla item to get an ItemsAdder item.
+# Ingredients can be placed in any order/position in the crafting grid.
+
+name: example_shapeless
+type: shapeless
+
+result:
+  type: itemsadder
+  id: itemsadder:ruby       # Replace with your actual ItemsAdder item id
+  amount: 2
+
+ingredients:
+  - type: mythicmobs
+    id: ExampleMythicGem    # Replace with your actual MythicMobs item name
+  - type: vanilla
+    id: GOLD_INGOT

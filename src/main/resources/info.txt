@@ -1,0 +1,30 @@
+=====================================================================
+  MMIAbridge  |  How it works
+  Author: BattleBornPMC
+=====================================================================
+
+MMIAbridge scans MythicMobs' and ItemsAdder's own config folders on
+startup (and automatically after either plugin reloads). It looks for
+recipes that reference items from the other plugin:
+
+  - In ItemsAdder recipe YAMLs:  ingredients using  mythicmobs:<Name>
+  - In MythicMobs item YAMLs:    ingredients using  itemsadder:<namespace>:<id>
+
+When it finds one, it registers that recipe internally.
+
+Because neither plugin natively understands the other's items, they
+will each log a warning about the unknown ingredient and skip that
+recipe. That is expected — MMIAbridge takes over from there.
+
+Whenever a player opens a crafting table, MMIAbridge checks the grid
+against its registered recipes. If the items match (including the
+custom MythicMobs or ItemsAdder items), it sets the correct result
+in the crafting output slot. The craft then works normally.
+
+---------------------------------------------------------------------
+
+  /mythicadder reload   — force a rescan of both plugins' configs
+  /mythicadder list     — show all currently registered cross recipes
+  /mythicadder debug    — toggle per-craft debug messages in console
+
+=====================================================================

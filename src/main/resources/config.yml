@@ -1,0 +1,5 @@
+# MythicAdderBridge Configuration
+# Reload with: /mythicadder reload
+
+# Whether to log recipe matches to console (useful for debugging)
+debug: false
